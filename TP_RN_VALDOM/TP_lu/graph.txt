@@ -1,0 +1,46 @@
+NB=4
+
+#panel
+i=0
+	A0->A0
+	#updates
+	j=1
+		A0,A1->A1
+	j=2
+		A0,A2->A2
+	j=3
+		A0,A3->A3
+
+#panel
+i=1
+	A1->A1
+	#updates
+	j=2
+		A1,A2->A2
+	j=3
+		A1,A3->A3
+
+
+#panel
+i=2
+	A2->A2
+	#updates
+	j=3
+		A2,A3->A3
+
+
+A0 -> A0
+	  |
+A1-------->A1->A1
+	  |		   |
+A2-------->A2------->A2->A2
+	  |		   |	 	  |
+A3-------->A3------->A3------->A3->A3
+
+
+
+Section à paralléliser : boucle for de update (travail avec j)
+
+
+#pragma omp single = un seul thread va exécuter la fonction
+#pragma omp for = exécute en parallèle

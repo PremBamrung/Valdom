@@ -1,0 +1,15 @@
+Il y a une dépense de "b" et "b-1" dans l'instruction sur "a"
+
+Il faut paralléliser la première instruction de la boucle for, qui est indépendente (instruction sur "b") et sortir l'instruction sur "a" de la boucle for et faire une seconde boucle for non parallélisée 
+
+
+#pragma omp parallel for
+for(i=0; i<n; i++){
+b1[i] = a1[i]+1;
+}
+
+#pragma omp parallel for
+for (i=0; i<n; i++){
+if(i != 0)
+  a1[i] = b1[i]-b1[i-1];
+}

@@ -1,0 +1,77 @@
+
+Ces TPs peuvent être effectues sur une machine linux équipée du
+compilateur gcc et avec au moins 2 coeurs (4 coeurs c'est beaucoup
+mieux). Néanmoins les codes ont été validés sur les machines en salle
+de TP et afin de réduire au minimum les problèmes techniques il est
+conseillé d'effectuer ces TP à distance en se connectant sur ces
+machines.
+
+Pour la connection aux machines en salle de TP il faut soit être
+connecté au réseau de l'ENSEEIHT, soit installer et utiliser le VPN de
+l'ENSEEIHT. Le instructions pour installer le VPN sont disponibles
+ici:
+
+[[https://dsi.inp-toulouse.fr/fr/mon-compte/mobilite-nomadisme-wi-fi-vpn.html]]
+
+Pour se connecter aux machines de TP il faut utiliser la commande
+~ssh~ disponible sur linux, windows et mac-os. Les noms des machines
+de TP suivent le format c201-01 ou c201 est le numéro de salle et 01
+le numéro de la machine dans cette salle. Les salles disponibles sont
+de c201 a c206 et normalement il y a entre 10 et 14 machines par
+salle. Donc si on veut e connecter a la machine 03 dans la salle c204
+on lancera la commande
+
+#+BEGIN_SRC sh
+ssh -XY c204-03
+#+END_SRC
+
+(l'option -XY vous permet d'exporter le display et donc de bénéficier
+de l'interface graphique si vous le souhaitez, par exemple, pour votre
+éditeur de texte) après avoir saisi le mot de passe on est connecté à
+la machine et toute commande lance depuis le terminal sera exécuté sur
+cette machine.
+
+Il est bien de vérifier que personne n'est déjà connecté sur la même
+machine en lançant la commande ~w~ qui affiche la liste des
+utilisateurs connectés. S'il y a déjà quelqu'un, choisissez une autre
+machine afin de ne pas être déranges (et de ne pas déranger).
+
+Une fois connectés, vous pouvez récupérer et décompresser le package
+contenant les sources des TPs avec ces commandes
+
+#+BEGIN_SRC sh
+cp /mnt/n7fs/ens/tp_abuttari/TP_RN_VALDOM.tgz .
+tar zxf TP_RN_VALDOM.tgz
+#+END_SRC
+
+vous pouvez maintenant vous déplacer dans le répertoire contenant les
+sources et afficher le contenu avec les commandes
+
+#+BEGIN_SRC sh
+cd TP_RN_VALDOM
+ls -l
+#+END_SRC
+
+le résultat devrait ressembler à ça
+
+#+BEGIN_EXAMPLE
+drwxrwxr-x 2 abuttari abuttari 4096 sept. 17 10:24 libs
+drwxrwxr-x 2 abuttari abuttari 4096 oct.  23  2019 LoopDependencies
+drwxrwxr-x 2 abuttari abuttari 4096 oct.  23  2019 norm2
+-rw-rw-r-- 1 abuttari abuttari 2066 sept. 17 11:05 README.org
+drwxrwxr-x 2 abuttari abuttari 4096 sept. 17 10:25 TP_lu
+drwxrwxr-x 2 abuttari abuttari 4096 sept. 17 10:12 TP_tree
+#+END_EXAMPLE
+
+Lors des TPs il vous sera demande de modifier des codes C et, en
+suite, de valider vos sources en les compilant et en les
+exécutant. Pour l'édition des sources vous pouvez utiliser les
+éditeurs de texte disponibles sur les machines de TP (comme vim/gvim
+ou emacs ou nano), par exemple
+
+#+BEGIN_SRC sh
+emacs TP_lu/lu_par_loop.c &
+#+END_SRC
+
+Avant les séances de TP il est conseillé de suivre les étapes
+ci-dessus et de vérifier que tout marche bien

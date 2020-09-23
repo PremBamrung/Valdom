@@ -1,0 +1,47 @@
+1 thread
+
+10
+sequential : 0	parallel reduc : 0 	parallel w/o reduc : 0
+
+1000
+sequential : 0	parallel reduc : 0 	parallel w/o reduc : 0
+
+1000000
+sequential : 0.9	parallel reduc : 0.8 	parallel w/o reduc : 10.7
+
+10000000
+sequential : 8.7	parallel reduc : 8.6 	parallel w/o reduc : 109.6
+
+
+1000000000
+sequential : 8.7	parallel reduc : 8.6 	parallel w/o reduc : 109.6
+
+
+2 thread
+
+10
+sequential : 0	parallel reduc : 0.1 	parallel w/o reduc : 0
+
+1000
+sequential : 0	parallel reduc : 0.1 	parallel w/o reduc : 0.1
+
+1000000
+sequential : 1.1	parallel reduc : 0.6 	parallel w/o reduc : 43.7
+
+10000000
+sequential : 9.1	parallel reduc : 8.6 	parallel w/o reduc : 109.6
+
+
+1000000000
+sequential : 881.3	parallel reduc : 452.6 	parallel w/o reduc : 53185.6
+
+
+
+
+
+
+Parallel sans reduction plus long ( critical ou atomic enlève l'intérêt de la parallélisation)
+
+Parralèle avec réduction devient plus rapide uniquement à partir d'une certaine valeur. Il faut une grande valeur pour compenser l'overhead de créer un pool de thread (gestion des threads prend du temps constant en plus)
+
+Plus de thread augmente les performances (réduit temps d'exécution) mais augmente l'overhead de la gestion des threads
